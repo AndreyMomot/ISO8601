@@ -25,7 +25,8 @@
 	}
 
 	if (!calendar) {
-		calendar = [NSCalendar currentCalendar];
+		//calendar = [NSCalendar currentCalendar];
+		calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 	}
 
 	NSTimeZone *UTCTimeZone = [NSTimeZone timeZoneWithName:@"UTC"];
@@ -50,7 +51,8 @@
 
 - (NSString * __nullable)ISO8601StringWithTimeZone:(NSTimeZone * __nullable)timeZone usingCalendar:(NSCalendar * __nullable)calendar {
 	if (!calendar) {
-		calendar = [NSCalendar currentCalendar];
+		//calendar = [NSCalendar currentCalendar];
+		calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 	}
 
 	if (timeZone) {
